@@ -182,7 +182,11 @@ p { margin: 0 0 1em; }
 .way-ic svg { width: 22px; height: 22px; }
 .way[data-kind="donate"] .way-ic { background: #FFF1D6; color: #C98A12; }
 
+.ways-3 { grid-template-columns: repeat(3, 1fr); }
 .support-form { max-width: 760px; }
+.form-head h3 { margin: 0 0 2px; font-size: 1.35rem; }
+.form-head p { margin: 0; color: var(--muted); font-size: .92rem; }
+.js-rotate::placeholder { color: #8A9792; }
 .kinds { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .kinds legend { font-size: .85rem; font-weight: 600; color: var(--dark); margin-bottom: 8px; padding: 0; }
 .pill { position: relative; display: inline-flex !important; }
@@ -214,12 +218,12 @@ p { margin: 0 0 1em; }
   .nav-links { display: none; }
   .hero-in, .benefits, .status, .form-grid { grid-template-columns: 1fr; }
   .hero-card { max-width: 420px; transform: none; }
-  .ways { grid-template-columns: 1fr 1fr; }
+  .ways, .ways-3 { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
   .nav-cta { display: none; }
   .stats, .steps { grid-template-columns: 1fr; }
-  .ways { grid-template-columns: 1fr; }
+  .ways, .ways-3 { grid-template-columns: 1fr; }
   .row2 { grid-template-columns: 1fr; }
   .cta-row .btn { flex: 1 1 auto; }
   .foot-links { justify-items: start; }
