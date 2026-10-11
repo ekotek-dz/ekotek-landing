@@ -109,6 +109,11 @@ window.EKOTEK_I18N = {
     "msg.invalid": "Please fill in the required fields.",
     "msg.mail": "Your email app will open with your message. Just press send.",
 
+    "legal.title": "Privacy & legal notice — EKOTEK",
+    "legal.back": "← Back to the site",
+    "f.consent": "I agree that EKOTEK uses my details to reply to me.",
+    "f.consentlink": "Privacy notice",
+    "foot.legal": "Privacy & legal notice",
     "foot.tag": "Measure food waste. Waste less.",
     "foot.privacy": "We only use your details to reply to you."
   },
@@ -223,6 +228,11 @@ window.EKOTEK_I18N = {
     "msg.invalid": "Merci de remplir les champs obligatoires.",
     "msg.mail": "Votre application e-mail va s'ouvrir avec votre message. Il suffit d'envoyer.",
 
+    "legal.title": "Confidentialité et mentions légales — EKOTEK",
+    "legal.back": "← Retour au site",
+    "f.consent": "J'accepte qu'EKOTEK utilise mes informations pour me répondre.",
+    "f.consentlink": "Politique de confidentialité",
+    "foot.legal": "Confidentialité et mentions légales",
     "foot.tag": "Mesurer le gaspillage. Gaspiller moins.",
     "foot.privacy": "Vos informations servent uniquement à vous répondre."
   }

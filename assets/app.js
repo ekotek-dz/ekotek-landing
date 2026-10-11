@@ -16,7 +16,7 @@
   function applyLang(l) {
     lang = l;
     document.documentElement.lang = l;
-    document.title = t("meta.title");
+    document.title = t(document.body.getAttribute("data-title-key") || "meta.title");
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       el.textContent = t(el.getAttribute("data-i18n"));
     });
