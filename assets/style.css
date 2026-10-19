@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
-  font-family: "Poppins", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: "Poppins", "Noto Sans", "Noto Sans Arabic", "Noto Sans Tifinagh", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 16px; line-height: 1.6;
 }
 img, svg { display: block; max-width: 100%; }
@@ -250,9 +250,9 @@ p { margin: 0 0 1em; }
 .lead-dark { font-size: 1.1rem; color: var(--muted) !important; }
 .facts { display: grid; grid-template-columns: 140px 1fr; gap: 10px 20px; margin: 20px 0 24px; }
 .facts dt { font-weight: 600; color: var(--dark); } .facts dd { margin: 0; }
-.l-fr, .l-ar { display: none; }
-html:lang(fr) .l-en, html:lang(ar) .l-en { display: none; }
-html:lang(fr) .l-fr, html:lang(ar) .l-ar { display: block; }
+.l-fr, .l-ar, .l-ber { display: none; }
+html:lang(fr) .l-en, html:lang(ar) .l-en, html:lang(ber) .l-en { display: none; }
+html:lang(fr) .l-fr, html:lang(ar) .l-ar, html:lang(ber) .l-ber { display: block; }
 @media (max-width: 640px) { .facts { grid-template-columns: 1fr; gap: 2px; } .facts dd { margin-bottom: 10px; } }
 
 /* ---------- Algerian Arabic (Darija), right-to-left ---------- */
@@ -270,3 +270,7 @@ html:lang(ar) .lang button[lang] { font-size: .85rem; padding-block: .42em; }
 [dir="rtl"] .form input[type="email"], [dir="rtl"] .form input[type="tel"] { direction: ltr; text-align: right; }
 [dir="rtl"] .stat b { direction: ltr; text-align: right; }
 @media (max-width: 980px) { [dir="rtl"] .hero-card { transform: none; } }
+
+/* ---------- Tamazight (Latin) ---------- */
+/* Letters Poppins lacks (ɛ, ɣ…) fall back to Noto Sans from the font stack. */
+.lang button[data-lang="ber"] { font-family: "Noto Sans Tifinagh", sans-serif; font-size: 1rem; padding-block: .32em; }

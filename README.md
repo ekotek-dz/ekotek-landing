@@ -1,10 +1,11 @@
 # EKOTEK landing page
 
-Static landing page in English, French and Algerian Arabic (Darija, right-to-left). No build step.
+Static landing page in English, French, Algerian Arabic (Darija, right-to-left) and
+standard Algerian Tamazight (Latin script). No build step.
 
 ```
 index.html              page content (text keys in data-i18n)
-assets/i18n.js          all English, French and Darija text
+assets/i18n.js          all English, French, Darija and Tamazight text
 assets/config.js        form endpoint, email, social links  <- edit here
 assets/app.js           language switch, forms, share button
 assets/style.css        styles
@@ -14,7 +15,7 @@ google-apps-script/     form receiver (Google Sheet + email), not deployed
 
 ## Language
 Detected from the browser (French browsers get French, Arabic browsers get Darija). Force it with
-`?lang=fr`, `?lang=en` or `?lang=ar` in the link, e.g. `?lang=ar` on Darija social posts.
+`?lang=fr`, `?lang=en`, `?lang=ar` or `?lang=ber` in the link, e.g. `?lang=ar` on Darija social posts.
 Darija is written in Arabic script; choosing it switches the page to right-to-left.
 
 ## Forms -> Google Sheet + email

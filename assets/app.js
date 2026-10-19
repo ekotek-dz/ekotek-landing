@@ -2,23 +2,26 @@
   var CFG = window.EKOTEK_CONFIG || {};
   var I18N = window.EKOTEK_I18N;
   var lang = "en";
+  var LANGS = ["en", "fr", "ar", "ber"];
 
   // ---------- language ----------
   function t(key) { return (I18N[lang] && I18N[lang][key]) || I18N.en[key] || key; }
 
   function pickInitialLang() {
     var q = new URLSearchParams(location.search).get("lang");
-    if (q === "fr" || q === "en" || q === "ar") return q;
-    try { var s = localStorage.getItem("ekotek-lang"); if (s === "fr" || s === "en" || s === "ar") return s; } catch (e) {}
+    if (LANGS.indexOf(q) >= 0) return q;
+    try { var s = localStorage.getItem("ekotek-lang"); if (LANGS.indexOf(s) >= 0) return s; } catch (e) {}
     var nav = (navigator.language || "en").toLowerCase();
     if (nav.indexOf("ar") === 0) return "ar";
+    if (/^(ber|kab|tzm|zgh|shy|shi|rif|tmh|taq)\b/.test(nav)) return "ber";
     return nav.indexOf("fr") === 0 ? "fr" : "en";
   }
 
   function applyLang(l) {
     lang = l;
     // Arabic = Algerian Darija (ar-DZ), laid out right-to-left.
-    document.documentElement.lang = l === "ar" ? "ar-DZ" : l;
+    // Tamazight = standard Algerian Tamazight in Latin script (ber-DZ).
+    document.documentElement.lang = l === "ar" ? "ar-DZ" : l === "ber" ? "ber-DZ" : l;
     document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
     document.title = t(document.body.getAttribute("data-title-key") || "meta.title");
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
