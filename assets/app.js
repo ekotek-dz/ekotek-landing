@@ -8,14 +8,18 @@
 
   function pickInitialLang() {
     var q = new URLSearchParams(location.search).get("lang");
-    if (q === "fr" || q === "en") return q;
-    try { var s = localStorage.getItem("ekotek-lang"); if (s === "fr" || s === "en") return s; } catch (e) {}
-    return (navigator.language || "en").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
+    if (q === "fr" || q === "en" || q === "ar") return q;
+    try { var s = localStorage.getItem("ekotek-lang"); if (s === "fr" || s === "en" || s === "ar") return s; } catch (e) {}
+    var nav = (navigator.language || "en").toLowerCase();
+    if (nav.indexOf("ar") === 0) return "ar";
+    return nav.indexOf("fr") === 0 ? "fr" : "en";
   }
 
   function applyLang(l) {
     lang = l;
-    document.documentElement.lang = l;
+    // Arabic = Algerian Darija (ar-DZ), laid out right-to-left.
+    document.documentElement.lang = l === "ar" ? "ar-DZ" : l;
+    document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
     document.title = t(document.body.getAttribute("data-title-key") || "meta.title");
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       el.textContent = t(el.getAttribute("data-i18n"));
